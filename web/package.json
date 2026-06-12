@@ -1,0 +1,26 @@
+{
+  "name": "fable-moon-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Moon-to-Mars cargo mission simulator — visualization frontend (TypeScript/React/Three.js over a Rust/WASM physics core)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "wasm": "cd ../sim-core && cargo build --release --target wasm32-unknown-unknown && cp target/wasm32-unknown-unknown/release/sim_core.wasm ../web/public/sim_core.wasm"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.169.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "typescript": "~5.6.3",
+    "vite": "^5.4.9"
+  }
+}

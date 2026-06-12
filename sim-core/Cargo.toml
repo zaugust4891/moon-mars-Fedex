@@ -1,0 +1,19 @@
+[package]
+name = "sim-core"
+version = "0.1.0"
+edition = "2021"
+description = "Moon-to-Mars cargo mission physics engine. Zero runtime dependencies; compiles natively (tests, report) and to wasm32-unknown-unknown (frontend)."
+
+[lib]
+name = "sim_core"
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "report"
+path = "src/bin/report.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
